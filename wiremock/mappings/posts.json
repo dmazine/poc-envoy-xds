@@ -1,0 +1,157 @@
+{
+    "mappings": [
+        {
+            "request": {
+                "method": "GET",
+                "urlPathPattern": "/posts",
+                "queryParameters" : {
+                    "delay" : {
+                      "absent" : true
+                    }
+                }
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "jsonBody": [
+                    {
+                        "id": "1",
+                        "title": "post #1",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "2",
+                        "title": "post #2",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "3",
+                        "title": "post #3",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "4",
+                        "title": "post #4",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "5",
+                        "title": "post #5",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "urlPathPattern": "/posts",
+                "queryParameters": {
+                    "delay": {
+                        "equalTo": "fixed"
+                    }
+                }
+            },
+            "response": {
+                "fixedDelayMilliseconds": 100,
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "jsonBody": [
+                    {
+                        "id": "1",
+                        "title": "post #1",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "2",
+                        "title": "post #2",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "3",
+                        "title": "post #3",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "4",
+                        "title": "post #4",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "5",
+                        "title": "post #5",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    }
+                ]
+            }
+        },
+        {
+            "request": {
+                "method": "GET",
+                "urlPathPattern": "/posts",
+                "queryParameters": {
+                    "delay": {
+                        "equalTo": "random"
+                    }
+                }
+            },
+            "response": {
+                "delayDistribution": {
+                    "type": "lognormal",
+                    "median": 100,
+                    "sigma": 0.5
+                },                
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "jsonBody": [
+                    {
+                        "id": "1",
+                        "title": "post #1",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "2",
+                        "title": "post #2",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "3",
+                        "title": "post #3",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "4",
+                        "title": "post #4",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    },
+                    {
+                        "id": "5",
+                        "title": "post #5",
+                        "content": "the brown fox jumps over the lazy dog",
+                        "author": "author"
+                    }
+                ]
+            }
+        }
+    ]
+}

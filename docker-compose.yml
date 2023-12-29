@@ -1,0 +1,16 @@
+version: '3'
+services:
+  application:
+    image: "wiremock/wiremock"
+    command: --global-response-templating --global-response-templating --disable-request-logging #--verbose 
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./wiremock:/home/wiremock
+  envoy:
+    image: envoyproxy/envoy:v1.28-latest
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+    volumes:
+      - ./envoy/:/etc/envoy/

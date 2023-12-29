@@ -1,0 +1,13 @@
+# Route Discovery Service
+version_info: "0"
+resources:
+  - "@type": type.googleapis.com/envoy.config.route.v3.RouteConfiguration
+    name: local_route
+    virtual_hosts:
+      - name: local_service
+        domains: ["*"]
+        routes:
+          - match:
+              prefix: "/"
+            route:
+              cluster: application

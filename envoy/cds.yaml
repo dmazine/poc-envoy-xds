@@ -1,0 +1,22 @@
+# Cluster Discovery Service
+version_info: "0"
+resources:
+  - "@type": type.googleapis.com/envoy.config.cluster.v3.Cluster
+    name: application
+    connect_timeout: 0.25s
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: application
+      endpoints:
+        - lb_endpoints:
+            - endpoint:
+                address:
+                  socket_address:
+                    address: application
+                    port_value: 8080
+    circuit_breakers:
+      thresholds:
+        max_pending_requests: 65536
+        max_requests: 65536
+        max_connections: 65536
